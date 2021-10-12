@@ -20,24 +20,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = ""
-        storyLabel.text = ""
         storyField.isHidden = true
         nameField.isHidden = true
         name.delegate = self
         if nameLabel.text == "" {
-        nameField.isHidden = true }
+        do { nameField.isHidden = true}
+    }
+        
     }
     
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBAction func submitName(_ sender: Any) {
-    let playerName = name.text
+        let playerName = name.text
         starterName.isHidden = true
         nameField.isHidden = false
-        storyField.isHidden = false
-    }
+            storyField.isHidden = false
+        nameLabel.text = playerName
+        storyLabel.text = ""
+        backgroundPic.image = UIImage (named: "JPStore")
+        }
+        
     @IBAction func whenNameTapped(_ sender: Any) {
         view.endEditing(true)
     }
     
+    @IBAction func whenBackgroundTapped(_ sender: Any) {
+        
+        
+}
 }
