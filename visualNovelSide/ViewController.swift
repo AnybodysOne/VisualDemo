@@ -31,13 +31,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBAction func submitName(_ sender: Any) {
-        let playerName = name.text
+        let PN = name.text!
+        let playerName = String(PN)
         starterName.isHidden = true
         nameField.isHidden = false
             storyField.isHidden = false
         nameLabel.text = playerName
-        storyLabel.text = ""
+        storyLabel.text = "My name is \(playerName)."
         backgroundPic.image = UIImage (named: "JPStore")
+        func scene1of1 () {
+            if  storyLabel.text == "My name is \(playerName)" {
+                do {
+                    storyLabel.text = "I’m 19 years old and frankly, pretty lonely at school. No close friends and I’m not in any clubs."
+                }
+            }
+        }
         }
         
     @IBAction func whenNameTapped(_ sender: Any) {
@@ -45,7 +53,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func whenBackgroundTapped(_ sender: Any) {
+    
         
         
 }
+    
 }
