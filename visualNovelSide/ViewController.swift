@@ -22,12 +22,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         storyField.isHidden = true
         nameField.isHidden = true
-        name.delegate = self
         if nameLabel.text == "" {
         do { nameField.isHidden = true}
-    }
+        }
         
     }
+
+    
     
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBAction func submitName(_ sender: Any) {
@@ -36,16 +37,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         starterName.isHidden = true
         nameField.isHidden = false
             storyField.isHidden = false
+        backgroundPic.image = UIImage (named: "JPStore")
         nameLabel.text = playerName
         storyLabel.text = "My name is \(playerName)."
-        backgroundPic.image = UIImage (named: "JPStore")
-        func scene1of1 () {
-            if  storyLabel.text == "My name is \(playerName)" {
-                do {
-                    storyLabel.text = "I’m 19 years old and frankly, pretty lonely at school. No close friends and I’m not in any clubs."
-                }
-            }
-        }
+
+        
         }
         
     @IBAction func whenNameTapped(_ sender: Any) {
@@ -53,9 +49,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func whenBackgroundTapped(_ sender: Any) {
+        let PN = name.text!
+        let playerName = String(PN)
+        let text1 = "I’m 19 years old and frankly, pretty lonely at school. No close friends and I’m not in any clubs."
+        let text2 = "The only thing interesting I’ve got going for me is working with money."
+        storyLabel.text = "\(text1)"
+        nameLabel.text = playerName
+        if storyLabel.text == "\(text1)" {
+            storyLabel.text = "\(text2)"
+        }
+        }
     
+        }
         
-        
-}
     
-}
+
